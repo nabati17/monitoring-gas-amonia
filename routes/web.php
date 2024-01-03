@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GasLevelController;
 use App\Http\Controllers\CustomAuthController;
 
 /*
@@ -25,11 +26,14 @@ Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
 Route::get('/', [CustomAuthController::class, 'index'])->name('login');
 Route::post('postlogin', [CustomAuthController::class, 'login'])->name('postlogin');
 
+
 Route::get('/register', [CustomAuthController::class, 'register'])->name('register');
 Route::post('postregister', [CustomAuthController::class, 'registersave'])->name('postregister');
 
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
 
-Route::get('/jajal', function () {
-    return view('jajal');
-});
+Route::get('dashboard', [GasLevelController::class, 'index']);
+
+Route::get('/api/getGasLevels', [GasLevelController::class, 'getGasLevelsApi']);
+
+// Route::get('/api/getGasLevels', [GasController::class, 'getGasLevels']);

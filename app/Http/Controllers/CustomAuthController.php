@@ -44,7 +44,7 @@ class CustomAuthController extends Controller
     $check = $this->create($data);
 
     // Redirect to login page after successful registration
-    return redirect('login')->with('message', 'Registration successful. Please login.');
+    return redirect()->route('login')->with('message', 'Registration successful. Please login.');
 }
 
     public function create(array $data){

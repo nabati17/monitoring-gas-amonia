@@ -5,15 +5,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.jpg">
     <title>
-        Material Dashboard 2 by Creative Tim
+        Halaman Login
     </title>
 
 
-    <link rel="canonical" href="https://www.creative-tim.com/product/material-dashboard" />
+    {{-- <link rel="canonical" href="https://www.creative-tim.com/product/material-dashboard" /> --}}
 
-    <meta name="keywords"
+    {{-- <meta name="keywords"
         content="creative tim, html dashboard, html css dashboard, web dashboard, bootstrap 5 dashboard, bootstrap 5, css3 dashboard, bootstrap 5 admin, Material Dashboard bootstrap 5 dashboard, frontend, responsive bootstrap 5 dashboard, free dashboard, free admin dashboard, free bootstrap 5 admin dashboard">
     <meta name="description"
         content="Material Dashboard 2 is a beautiful Bootstrap 5 admin dashboard with a large number of components, designed to look beautiful and organized. If you are looking for a tool to manage and visualize data about your business, this dashboard is the thing for you.">
@@ -35,13 +35,13 @@
         content="https://s3.amazonaws.com/creativetim_bucket/products/450/original/material-dashboard.jpg" />
     <meta property="og:description"
         content="Material Dashboard 2 is a beautiful Bootstrap 5 admin dashboard with a large number of components, designed to look beautiful and organized. If you are looking for a tool to manage and visualize data about your business, this dashboard is the thing for you." />
-    <meta property="og:site_name" content="Creative Tim" />
+    <meta property="og:site_name" content="Creative Tim" /> --}}
 
     <link rel="stylesheet" type="text/css"
         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
 
-    <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
-    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+    {{-- <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" /> --}}
 
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
 
@@ -59,22 +59,22 @@
 </head>
 
 <body class="bg-gray-200">
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
+    {{-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript> --}}
 
     <main class="main-content  mt-0">
-        <div class="page-header align-items-start min-vh-100"
-            style="background-image: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80');">
-            <span class="mask bg-gradient-dark opacity-6"></span>
+        <div class="page-header align-items-start min-vh-100" style="background-color: #eeeeee">
+            <span class="mask opacity-6"></span>
             <div class="container my-auto">
                 <div class="row justify-content-center align-items-center min-vh-100">
                     <div class="col-lg-4 col-md-8 col-12 mx-auto">
                         <div class="card z-index-0 fadeIn3 fadeInBottom">
                             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                                <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
+                                <div style="background-color: #ffdd00d8"
+                                    class="shadow-primary border-radius-lg py-3 pe-1">
                                     <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Login</h4>
 
-                                    <div class="row mt-3">
+                                    {{-- <div class="row mt-3">
                                         <div class="col-2 text-center ms-auto">
                                             <a class="btn btn-link px-3" href="javascript:;">
                                                 <i class="fa fa-facebook text-white text-lg"></i>
@@ -90,7 +90,7 @@
                                                 <i class="fa fa-google text-white text-lg"></i>
                                             </a>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                             <div class="card-body">
@@ -123,13 +123,13 @@
                                         <label class="form-check-label mb-0 ms-3" for="rememberMe">Remember me</label>
                                     </div> --}}
                                     <div class="text-center">
-                                        <button type="submit"
-                                            class="btn bg-gradient-primary w-100 my-4 mb-2">Login</button>
+                                        <button type="submit" style="background-color: #ffdd00d8"
+                                            class="btn text-white w-100 my-4 mb-2">Login</button>
                                     </div>
                                     <p class="mt-4 text-sm text-center">
                                         Don't have an account?
                                         <a href="/register"
-                                            class="text-primary text-gradient font-weight-bold">Register</a>
+                                            class="text-dark text-gradient font-weight-bold">Register</a>
                                     </p>
                                 </form>
                             </div>
