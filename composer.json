@@ -9,7 +9,8 @@
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.2",
-        "laravel/tinker": "^2.8"
+        "laravel/tinker": "^2.8",
+        "php-amqplib/php-amqplib": "^3.6"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -53,6 +54,7 @@
         }
     },
     "config": {
+        "process-timeout": 300,
         "optimize-autoloader": true,
         "preferred-install": "dist",
         "sort-packages": true,
@@ -62,5 +64,11 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/php-enqueue/laravel-queue"
+        }
+    ]
 }

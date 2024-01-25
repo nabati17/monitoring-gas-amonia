@@ -9,14 +9,16 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
-        Schema::create('gas_levels', function (Blueprint $table) {
-            $table->id();
-            $table->integer('gas_level');
-            $table->timestamps();
-        });
-    }
+  public function up()
+{
+    Schema::create('gas_levels', function (Blueprint $table) {
+        $table->id(); // Ini akan membuat kolom id dengan tipe data integer
+        $table->integer('gas_level');
+        $table->timestamps();
+
+         $table->unique('gas_level');
+    });
+}
 
     /**
      * Reverse the migrations.

@@ -9,11 +9,11 @@ class GasLevel extends Model
 {
     use HasFactory;
 
-    protected $table = 'gas_levels'; 
+    protected $table = 'gas_levels';
 
     protected $fillable = [
         'gas_level',
     ];
 
-
+    public $timestamps = true;
 }

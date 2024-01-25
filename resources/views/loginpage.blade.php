@@ -37,6 +37,8 @@
         content="Material Dashboard 2 is a beautiful Bootstrap 5 admin dashboard with a large number of components, designed to look beautiful and organized. If you are looking for a tool to manage and visualize data about your business, this dashboard is the thing for you." />
     <meta property="og:site_name" content="Creative Tim" /> --}}
 
+    <link rel="stylesheet" href="../assets/css/material-dashboard.min.css">
+
     <link rel="stylesheet" type="text/css"
         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
 

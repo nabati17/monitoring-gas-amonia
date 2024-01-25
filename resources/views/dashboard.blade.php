@@ -7,6 +7,8 @@
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/logo-ct.jpg" />
     <link rel="icon" type="image/png" href="../assets/img/favicon.jpg" />
     <title>Monitoring Gas Amonia</title>
+    <link rel="stylesheet" href="../path/to/perfect-scrollbar.min.css" />
+    <script src="../path/to/perfect-scrollbar.min.js"></script>
     <link rel="stylesheet" type="text/css"
         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
@@ -14,7 +16,15 @@
     <script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/1.0.0/dist/progressbar.min.js"></script>
     <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.1.0" rel="stylesheet" />
 
-    <link rel="stylesheet" href="/assets/css/material-dashboard.css">
+
+    <link rel="stylesheet" href="../path/to/perfect-scrollbar.min.css" />
+    <script src="../path/to/perfect-scrollbar.min.js"></script>
+
+    <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.1.0" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/material-dashboard.css">
+
+    <link rel="stylesheet" href="../assets/css/material-dashboard.css">
+
     <style>
         .green-indicator {
             background-color: #00ff00;
@@ -31,7 +41,6 @@
             /* Warna merah */
         }
     </style>
-
 </head>
 
 <body class="g-sidenav-show bg-gray-200">
@@ -82,24 +91,36 @@
             <div class="container-fluid py-3 px-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">
-                            <h3>Hello {{ Auth::user()->name }}</h3>
+                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a>
                         </li>
+                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Dashboarddd</li>
                     </ol>
+                    <h6 class="font-weight-bolder mb-0">Dashboard</h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
-                    <ul class="navbar-nav justify-content-end">
-                        <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
-                            <a class="nav-link text-body p-0" id="iconNavbarSidenav">
-                                <div class="sidenav-toggler-inner">
-                                    <i class="sidenav-toggler-line"></i>
-                                    <i class="sidenav-toggler-line"></i>
-                                    <i class="sidenav-toggler-line"></i>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+                        <!-- <div class="input-group input-group-outline">
+<label class="form-label">Type here...</label> -->
+                        <!-- <input type="text" class="form-control"> -->
+                    </div>
                 </div>
+                <ul class="navbar-nav  justify-content-end">
+                    <li class="nav-item d-flex align-items-center">
+                        <!-- <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank" href="https://www.creative-tim.com/builder?ref=navbar-material-dashboard">Online Builder</a> -->
+                    </li>
+                    <li class="mt-2">
+                        <!-- <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star creativetimofficial/material-dashboard on GitHub">Star</a> -->
+                    </li>
+                    <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                        <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                            <div class="sidenav-toggler-inner">
+                                <i class="sidenav-toggler-line"></i>
+                                <i class="sidenav-toggler-line"></i>
+                                <i class="sidenav-toggler-line"></i>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </nav>
         <!-- Content -->
@@ -154,75 +175,7 @@
         </div>
     </main>
 
-    <!-- JavaScript -->
-    <script>
-        fetch('/api/getGasLevels')
-            .then(response => response.json())
-            .then(data => {
-                const gasLevel = data.gasLevels[0].gas_level / 100;
-
-                // Update the progress bar value
-                var semiBar = new ProgressBar.SemiCircle("#semi-container", {
-                    color: gasLevel <= 0.3 ? "green" : (gasLevel <= 0.7 ? "yellow" : "red"),
-                    strokeWidth: 2,
-                    trailWidth: 8,
-                    trailColor: "black",
-                    easing: "bounce",
-                    from: {
-                        color: "#FF0099",
-                        width: 1
-                    },
-                    to: {
-                        color: "#FF9900",
-                        width: 2
-                    },
-                    text: {
-                        value: '0',
-                        className: 'progress-text',
-                        style: {
-                            color: 'black',
-                            position: 'absolute',
-                            top: '50%', // Adjusted top position for centering
-                            left: '50%',
-                            padding: 0,
-                            margin: 0,
-                            transform: 'translate(-50%, -50%)', // Center the text
-                            fontSize: '50px'
-                        }
-                    },
-                    step: (state, shape) => {
-                        shape.path.setAttribute("stroke", state.color);
-                        shape.path.setAttribute("stroke-width", state.width);
-                        shape.setText(Math.round(shape.value() * 100) + ' %');
-                    }
-                });
-
-                semiBar.animate(gasLevel, {
-                    duration: 2000
-                });
-
-                // Update the color indicators based on gas level
-                var redIndicator = document.getElementById('red-indicator');
-                var yellowIndicator = document.getElementById('yellow-indicator');
-                var greenIndicator = document.getElementById('green-indicator');
-
-                // Remove existing classes
-                redIndicator.classList.remove('red-indicator');
-                yellowIndicator.classList.remove('yellow-indicator');
-                greenIndicator.classList.remove('green-indicator');
-
-                // Add new classes based on gas level
-                if (gasLevel <= 0.3) {
-                    greenIndicator.classList.add('green-indicator');
-                } else if (gasLevel <= 0.7) {
-                    yellowIndicator.classList.add('yellow-indicator');
-                } else {
-                    redIndicator.classList.add('red-indicator');
-                }
-            })
-            .catch(error => console.error('Error fetching gas level data:', error));
-    </script>
-
+    <script src="../assets/js/progressbar.js"></script>
     <!-- Additional Scripts -->
     <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
     <script src="../assets/js/material-dashboard.min.js?v=3.1.0"></script>

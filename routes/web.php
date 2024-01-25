@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GasLevelController;
 use App\Http\Controllers\CustomAuthController;
+use App\RabbitMQ\GasLevelProducer;
+use App\RabbitMQ\GasLevelConsumer;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,4 +38,14 @@ Route::get('dashboard', [GasLevelController::class, 'index']);
 
 Route::get('/api/getGasLevels', [GasLevelController::class, 'getGasLevelsApi']);
 
-// Route::get('/api/getGasLevels', [GasController::class, 'getGasLevels']);
+Route::get('/send-gas-level', function () {
+    $producer = new GasLevelProducer();
+    $producer->send(['gas_level' => 20]); // Sesuaikan data yang ingin Anda kirim
+    return 'Gas level sent to RabbitMQ!';
+});
+
+Route::get('/consume-gas-level', function () {
+    $consumer = new GasLevelConsumer();
+    $consumer->consume();
+    return 'Gas level consumed from RabbitMQ!';
+});

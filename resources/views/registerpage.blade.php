@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css"
         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
 
+    <link rel="stylesheet" href="../assets/css/material-dashboard.min.css">
     <link id="pagestyle" href="../assets/css/material-dashboard.min.css?v=3.1.0" rel="stylesheet" />
 </head>
 

@@ -92,6 +92,24 @@ return [
             // 'encrypt' => env('DB_ENCRYPT', 'yes'),
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
+        
+        'rabbitmq' => [
+    'driver' => 'rabbitmq',
+    'host' => env('RABBITMQ_HOST',  'rmq1.pptik.id'),
+    'port' => env('RABBITMQ_PORT', '5672'),
+    'vhost' => env('RABBITMQ_VHOST', '/'),
+    'login' => env('RABBITMQ_USER', 'ubliot'), // Sesuaikan dengan nama variabel yang ada di .env
+    'password' => env('RABBITMQ_PASSWORD', 'qwerty1245'), // Sesuaikan dengan nama variabel yang ada di .env
+    'options' => [
+        'exchange' => [
+            'name' => env('RABBITMQ_EXCHANGE_NAME', 'amq.topic'),
+            'type' => env('RABBITMQ_EXCHANGE_TYPE', 'topic'),
+        ],
+        'queue' => [
+            'name' => env('RABBITMQ_QUEUE_NAME', 'amonia'),
+        ],
+    ],
+], // Pastikan ada koma di sini
 
     ],
 
